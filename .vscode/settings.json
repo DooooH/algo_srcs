@@ -1,0 +1,8 @@
+{
+	"peacock.color": "#832561",
+	"files.associations": {
+		"list": "cpp",
+		"iostream": "cpp",
+		"ios": "cpp"
+	}
+}
