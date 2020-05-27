@@ -3,6 +3,10 @@
 	"files.associations": {
 		"list": "cpp",
 		"iostream": "cpp",
-		"ios": "cpp"
+		"ios": "cpp",
+		"iosfwd": "cpp",
+		"algorithm": "cpp",
+		"queue": "cpp",
+		"stack": "cpp"
 	}
 }

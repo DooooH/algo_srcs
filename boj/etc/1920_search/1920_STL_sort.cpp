@@ -1,58 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1920.cpp                                           :+:      :+:    :+:   */
+/*   1920_STL_sort.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dohkim <dohkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 15:59:52 by dohkim            #+#    #+#             */
-/*   Updated: 2020/05/20 14:40:31 by dohkim           ###   ########.fr       */
+/*   Updated: 2020/05/20 19:52:57 by dohkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <bits/stdc++.h>
 #define SWAP(a, b, temp) temp = a; a = b; b = temp;
 using namespace std;
-
-void partition(vector<int> &V, int start, int end, int &pivot)
-{
-	int temp;
-	int left, right;
-	
-	pivot = start;
-	left = start;
-	right = end;
-	while (left < right)
-	{
-		while (V[left] <= V[pivot] && left < end)
-			left++;
-		while (V[right] >= V[pivot] && right > start)
-			right--;
-		if (left < right)
-		{
-			SWAP(V[left], V[right], temp);
-		}
-	}
-	if (pivot != right)
-	{
-		SWAP(V[pivot], V[right], temp);
-		pivot = right;
-	}
-}
-
-void quick_sort(vector<int> &V, int start, int end)
-{
-	int pivot;
-
-	if (start < end)
-	{
-		partition(V, start, end, pivot);
-		if (pivot != start)
-			quick_sort(V, start, pivot - 1);
-		if (pivot != end)
-			quick_sort(V, pivot + 1, end);
-	}
-}
 
 int binary_search(vector<int> &V, int target)
 {
@@ -76,6 +36,8 @@ int binary_search(vector<int> &V, int target)
 
 int main()
 {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 	int N, M;
 	vector<int> Ns, Ms;
 	int temp;
@@ -85,7 +47,7 @@ int main()
 		cin >> temp;
 		Ns.push_back(temp);
 	}
-	quick_sort(Ns, 0, Ns.size() - 1);
+	sort(Ns.begin(), Ns.end());
 	cin >> M;
 	int exist = 0;
 	for (int i = 0; i < M; i++)
