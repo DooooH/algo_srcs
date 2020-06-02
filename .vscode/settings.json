@@ -9,6 +9,8 @@
 		"queue": "cpp",
 		"stack": "cpp",
 		"vector": "cpp",
-		"iterator": "cpp"
+		"iterator": "cpp",
+		"fstream": "cpp",
+		"locale": "cpp"
 	}
 }
