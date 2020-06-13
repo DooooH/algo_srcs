@@ -21,12 +21,20 @@ bool is_convertable(string from, string to)
 	return true;
 }
 
-void find_min(vector<int> visited, vector<string> words, string target, int cnt)
+void find_min(vector<int> visited, vector<string> words, string from, string target, int cnt)
 {
-	string from;
+	// string from;
 
-	if (s.empty())
-		return ;
+	// if (s.empty())
+	// 	return ;
+	for (int i = 0; i < words.size(); i++)
+	{
+		if (from.compare(words[i]) != 0 && visited[i] == 0 && is_convertable(from, words[i]))
+		{
+			s.push(words[i]);
+			visited[i] = 1;
+		}
+	}
 	from = s.top();
 	s.pop();
 	cnt++;
@@ -40,16 +48,8 @@ void find_min(vector<int> visited, vector<string> words, string target, int cnt)
 			minimum = min(minimum, cnt);
 		return ;
 	}
-	for (int i = 0; i < words.size(); i++)
-	{
-		if (from.compare(words[i]) != 0 && visited[i] == 0 && is_convertable(from, words[i]))
-		{
-			s.push(words[i]);
-			visited[i] = 1;
-		}
-	}
-	while (!s.empty())
-		find_min(visited, words, target, cnt);
+	// while (!s.empty())
+		find_min(visited, words, from, target, cnt);
 }
 
 int solution(string begin, string target, vector<string> words) {
@@ -68,15 +68,15 @@ int solution(string begin, string target, vector<string> words) {
 	}
 	if (!is_exist)
 		return answer;
-	for (int i = 0; i < words.size(); i++)
-	{
-		if (begin.compare(words[i]) != 0 && visited[i] == 0 && is_convertable(begin, words[i]))
-		{
-			s.push(words[i]);
-			visited[i] = 1;
-		}
-	}
-	find_min(visited, words, target, cnt);
+	// for (int i = 0; i < words.size(); i++)
+	// {
+	// 	if (begin.compare(words[i]) != 0 && visited[i] == 0 && is_convertable(begin, words[i]))
+	// 	{
+	// 		s.push(words[i]);
+	// 		visited[i] = 1;
+	// 	}
+	// }
+	find_min(visited, words, begin, target, cnt);
 	answer = minimum;
     return answer;
 }
