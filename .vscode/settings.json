@@ -12,6 +12,8 @@
 		"iterator": "cpp",
 		"fstream": "cpp",
 		"locale": "cpp",
-		"type_traits": "cpp"
+		"type_traits": "cpp",
+		"string": "cpp",
+		"random": "cpp"
 	}
 }
