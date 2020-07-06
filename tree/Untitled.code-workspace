@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "/Users/dohkim/Algorithm"
+		}
+	],
+	"settings": {
+		"sync.autoDownload": true,
+		"files.associations": {
+			"vector": "cpp",
+			"iostream": "cpp",
+			"utility": "cpp",
+			"map": "cpp",
+			"iosfwd": "cpp",
+			"iterator": "cpp",
+			"queue": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp"
+		}
+	}
+}
