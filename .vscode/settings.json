@@ -14,6 +14,8 @@
 		"locale": "cpp",
 		"type_traits": "cpp",
 		"string": "cpp",
-		"random": "cpp"
+		"random": "cpp",
+		"map": "cpp",
+		"utility": "cpp"
 	}
 }
